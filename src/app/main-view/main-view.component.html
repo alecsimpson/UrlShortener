@@ -1,0 +1,14 @@
+<div class="background">
+  <div class="form-box">
+    <h3 class="title">Mini Link</h3>
+    <form (submit)="onSubmit()">
+      <label for="long-url"></label>
+      <input type="text" id="long-url" name="long-url" required placeholder="https://www..." [(ngModel)]="longUrl">
+      <button type="submit" [disabled]="!longUrl">Make Mini Link</button>
+    </form>
+    <div *ngIf="submitted" class="output">
+      <input type="text" readonly [value]="shortUrl" class="outputUrl">
+      <button (click)="copyToClipboard()" class="copyButton">Copy</button>
+    </div>
+  </div>
+</div>
